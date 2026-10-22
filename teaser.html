@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something is brewing — Roasted</title>
+<meta name="description" content="Something is brewing. Be the first to know when Roasted is ready.">
+<style>
+  :root { --ink: #0E0906; --cream: #EFDDB4; --muted: #A98F6F; --brown: #967259; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: var(--ink); color: var(--cream); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; position: relative; overflow-x: hidden; }
+  body::before { content: ""; position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 90vw; height: 90vw; max-width: 640px; max-height: 640px; background: radial-gradient(circle, rgba(150,114,89,0.22) 0%, rgba(150,114,89,0) 65%); pointer-events: none; }
+  .mark { width: 110px; height: 110px; margin-bottom: 40px; position: relative; opacity: 0; animation: fadein 2.5s ease forwards 0.3s, glowpulse 5s ease-in-out infinite 3s; filter: drop-shadow(0 0 24px rgba(239,221,180,0.25)); }
+  .lines { position: relative; }
+  .lines p { font-size: 1.65rem; line-height: 1.55; opacity: 0; animation: fadein 2.5s ease forwards; }
+  .lines p:nth-child(1) { animation-delay: 1s; }
+  .lines p:nth-child(2) { animation-delay: 2s; color: var(--muted); font-style: italic; }
+  .lines p:nth-child(3) { animation-delay: 3s; }
+  .lines p:nth-child(3) strong { color: var(--cream); font-size: 1.9rem; }
+  .wordmark { margin-top: 36px; letter-spacing: 0.5em; text-indent: 0.5em; font-size: 0.95rem; color: var(--cream); opacity: 0; animation: fadein 2.5s ease forwards 4s; }
+  .stats { margin-top: 10px; font-size: 0.85rem; color: var(--muted); letter-spacing: 0.12em; opacity: 0; animation: fadein 2.5s ease forwards 4.4s; }
+  form { margin-top: 36px; display: flex; width: 100%; max-width: 380px; position: relative; opacity: 0; animation: fadein 2.5s ease forwards 4.8s; border: 1px solid var(--brown); border-radius: 999px; padding: 5px; background: rgba(255,255,255,0.03); }
+  form:focus-within { border-color: var(--cream); }
+  input[type="email"] { flex: 1; min-width: 0; background: transparent; border: none; color: var(--cream); padding: 12px 18px; font-size: 1rem; font-family: Georgia, serif; outline: none; }
+  input[type="email"]::placeholder { color: var(--muted); }
+  button { background: var(--cream); color: var(--ink); border: none; padding: 12px 24px; font-size: 0.95rem; font-family: Georgia, serif; border-radius: 999px; cursor: pointer; letter-spacing: 0.05em; white-space: nowrap; }
+  button:hover { opacity: 0.9; }
+  .tiny { margin-top: 28px; font-size: 0.8rem; color: var(--muted); position: relative; opacity: 0; animation: fadein 2.5s ease forwards 5.4s; }
+  .tiny a { color: var(--muted); }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes glowpulse { 0%, 100% { filter: drop-shadow(0 0 24px rgba(239,221,180,0.25)); } 50% { filter: drop-shadow(0 0 40px rgba(239,221,180,0.4)); } }
+</style>
+</head>
+<body>
+  <img class="mark" src="assets/mark.png" alt="Roasted">
+  <div class="lines">
+    <p>Something is brewing.</p>
+    <p>You can almost taste it.</p>
+    <p>But you can't see it. <strong>Yet.</strong></p>
+  </div>
+  <div class="wordmark">ROASTED</div>
+  <div class="stats">295 BEANS · 91 CAFÉS · ONE APP</div>
+  <form action="https://formsubmit.co/Roasted.service@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New Roasted launch list signup">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="thanks.html">
+    <input type="email" name="email" placeholder="Your email address" required>
+    <button type="submit">Notify me</button>
+  </form>
+  <p class="tiny">No spam. One email when it's ready. · <a href="privacy.html">Privacy Policy</a></p>
+</body>
+</html>
